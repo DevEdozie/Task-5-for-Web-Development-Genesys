@@ -12,20 +12,20 @@ const convFahrToCel = function (fahr) {
   return `${fahr}F => ${cel}C`;
 };
 
-// console.log(convFahrToCel(1));
+console.log(convFahrToCel(12));
 
 /*
 2. Create a function that will calculate the average of numbers in an array.
 */
 
-let average = 0;
 const calcAverage = function (numbers) {
+  let average = 0;
   numbers.forEach((number) => (average += number / numbers.length));
 
   return average;
 };
 
-// console.log(calcAverage([10, 2, 3, 4]));
+console.log(calcAverage([10, 2, 3, 10]));
 
 /*
 3. Create a function that checks if a number, n is divisible by two numbers x and y.
@@ -40,7 +40,7 @@ const isAFactor = function (n, x, y) {
   }
 };
 
-// isAFactor(10, 5, 2);
+isAFactor(15, 5, 3);
 
 /*
 4. Create a function that will output the first 100 prime numbers.
@@ -48,34 +48,26 @@ const isAFactor = function (n, x, y) {
 
 const printFirst100Prime = function () {
   const listPrime = [];
-  //   let factors = 0;
   let div = 0;
 
   for (let i = 1; i <= 1000; i++) {
-    // console.log(`I: ${i}`);
     let factors = 0;
     for (let j = 1; j <= 1000; j++) {
-      //   console.log(`J: ${j}`);
-      //
       div = i % j;
-      //   console.log(`Div: ${div}`);
       if (div === 0) {
         factors += 1;
       }
-      //
     }
     if (factors < 3) {
       listPrime.push(i);
     }
   }
 
-  console.log(listPrime);
-
-  // Print the first 100 prime numbers
-  //   console.log("The first 100 prime numbers>>>");
-  //   for (let i = 0; i < 100; i++) {
-  //     console.log(listPrime[i]);
-  //   }
+  console.log(`First 100 prime numbers >>>>.`);
+  for (let i = 0; i <= 100; i++) {
+    console.log(listPrime[i]);
+  }
+  console.log("<<<<<<<");
 };
 
 printFirst100Prime();
@@ -90,7 +82,7 @@ const checkIfPrime = function (number) {
   let isPrime = false;
   let factors = 0;
 
-  // Loop from one till the number
+  // Loop from 1 till the specified number
   for (let i = 1; i <= number; i++) {
     // Check remainder
     div = number % i;
@@ -107,7 +99,7 @@ const checkIfPrime = function (number) {
   return isPrime;
 };
 
-console.log(checkIfPrime(18));
+console.log(checkIfPrime(541));
 
 /*
 6. Create a function that receives an array of numbers of diverse numbers
@@ -116,7 +108,7 @@ and returns an array containing only positive numbers.
 
 const retPos = (numbers) => numbers.filter((number) => number > 0);
 
-// console.log(retPos([-1, 23, 3, 4, 8, -1, 4]));
+console.log(retPos([-1, -23, -3, 4, 8, -1, 4]));
 
 /*
 7. Write a program that prints the numbers from 1 to 100. But for multiples of 3
@@ -138,7 +130,7 @@ const printFizzBuzz = function () {
   }
 };
 
-// printFizzBuzz();
+printFizzBuzz();
 
 /*
 8. The marketing team is spending way too much time typing in hashtags. Let’s
@@ -167,7 +159,6 @@ const hashTagGen = function (input) {
 
   console.log(newArray.length);
 
-  // If
   if (newArray.length > 140 || newArray.length === 0) {
     return false;
   } else {
@@ -175,8 +166,4 @@ const hashTagGen = function (input) {
   }
 };
 
-// console.log(
-//   hashTagGen(
-//     "dgdfdhf v    ljgdgd    hkgkhgs jkgkhg gjgkyu jkhk vvkh vvkh jvk vg vhjgk jgkg hg khgkg khgk kjgkg jgbkhgkb  gjkkg jggkjvdghs     ghjggdanbvjk return newArray;  no   is not a string"
-//   )
-// );
+console.log(hashTagGen("Workers day is today"));
